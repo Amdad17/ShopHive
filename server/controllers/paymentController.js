@@ -1,7 +1,7 @@
 const axios = require("axios")
 
 const CHAPA_URL = process.env.CHAPA_URL || "https://api.chapa.co/v1/transaction/initialize"
-const CHAPA_AUTH = process.env.CHAPA_AUTH 
+const CHAPA_AUTH = process.env.CHAPA_AUTH // || register to chapa and get the key
 
 const initializePayment = async (req, res) => {
 
@@ -36,7 +36,7 @@ const initializePayment = async (req, res) => {
         })
         .catch((err) => console.log(err))
 
-        
+        /* res.json({res: "message", url: CALLBACK_URL}) */
 }
 
 const verifyPayment = async (req, res) => {
